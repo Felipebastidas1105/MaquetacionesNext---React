@@ -1,5 +1,4 @@
-
-import React from 'react'
+'use client'
 import Header from './Header'
 import SearchBar from './SearchBar'
 

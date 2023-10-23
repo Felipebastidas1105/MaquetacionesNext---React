@@ -1,5 +1,4 @@
 'use client'
-import React from 'react'
 import {BiSolidUserCircle} from 'react-icons/bi'
 import 'tailwindcss/tailwind.css';
 

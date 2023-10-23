@@ -1,7 +1,6 @@
 'use client'
 import HeaderAdmin from '@/components/HeaderAdmin'
-import SlideBar from '@/components/SlideBar'
-import React from 'react'
+import SlideBar from '@/components/BreadCrum'
 
 export default function page() {
   return (
