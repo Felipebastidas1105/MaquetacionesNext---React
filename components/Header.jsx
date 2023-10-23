@@ -2,6 +2,7 @@ import React from 'react'
 import { GiEarthAmerica } from 'react-icons/gi'
 import {AiOutlineMenu} from 'react-icons/ai'
 import {AiOutlineUser} from 'react-icons/ai'
+import Link from 'next/link'
 import 'tailwindcss/tailwind.css';
 
 
@@ -24,6 +25,7 @@ export default function Header() {
             <div className="flex flex-row gap-2 bg-white p-1 rounded-lg ">
             <button><AiOutlineMenu className="icon w-6 h-6" /></button>
             <button><AiOutlineUser className="icon w-6 h-6" /></button>
+            <Link href="/contacto">Ir a administrar</Link>
         </div>
         </div>
         

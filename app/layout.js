@@ -8,12 +8,10 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
-  const background = {
-    backgroundImage: "url('https://s1.1zoom.me/b5441/516/England_Houses_Rivers_Bridges_Knaresborough_527029_1080x1920.jpg')",
-  };
+  
   return (
     <html lang="en">
-      <body className="bg-fixed bg-cover" style={background}>
+      <body >
         {children}
       </body>
     </html>
