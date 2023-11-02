@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { GiEarthAmerica } from 'react-icons/gi'
 import {AiOutlineMenu} from 'react-icons/ai'
 import {AiOutlineUser} from 'react-icons/ai'
@@ -20,12 +20,10 @@ export default function Header() {
             </ul>
         </div>
         <div className="flex flex-row gap-3 items-center">
-            <p className='text-white'>Become a host</p>
-             <button><GiEarthAmerica className="icon w-6 h-6 " /></button>
+            
             <div className="flex flex-row gap-2 bg-white p-1 rounded-lg ">
             <button><AiOutlineMenu className="icon w-6 h-6" /></button>
             <button><AiOutlineUser className="icon w-6 h-6" /></button>
-            <Link href="/contacto">Ir a administrar</Link>
         </div>
         </div>
         
