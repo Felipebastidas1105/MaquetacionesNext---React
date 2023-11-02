@@ -1,4 +1,6 @@
+import HistorialVenta from '@/components/HistorialVenta'
 import { Inter } from 'next/font/google'
+import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -12,7 +14,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body >
+        {/* <Link href="/admin">Administrar empresa</Link> */}
         {children}
+        {/* <HistorialVenta/> */}
       </body>
     </html>
   )
