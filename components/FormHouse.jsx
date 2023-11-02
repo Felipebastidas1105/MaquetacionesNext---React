@@ -3,7 +3,7 @@ import React from 'react'
 export default function FormHouse() {
     
   return (
-            <div class="border border-red-500">
+            <div class="">
                 <p class="text-3xl font-bold leading-7 text-center text-white">Contact me</p>
                 <form action="" method="post">
                     <div class="md:flex items-center mt-12">

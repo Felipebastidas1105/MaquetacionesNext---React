@@ -110,12 +110,12 @@ export default function SearchBar() {
           <input className='outline-none' type="text" placeholder='Add guests' />
         </div>
         <div>
-          <button className=' flex flex-col items-center justify-center bg-red-400 h-14 w-14 rounded-full hover:bg-gray-800 hover:text-white'><BiSearchAlt className='w-10 h-10' /></button>
+          <button className=' flex flex-col items-center justify-center bg-[#F34511] h-14 w-14 rounded-full hover:bg-gray-800 hover:text-white'><BiSearchAlt className='w-10 h-10' /></button>
         </div>
       </div>
-      <div className='flex flex-col items-center m-20'>
-        <h1 className='text-white font-bold text-6xl mt-20'>The Greatest Outdors</h1>
-        <p className='text-white mt-8'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur, suscipit.</p>
+      <div className='flex flex-col items-center m-36'>
+        <h1 className='text-white font-bold text-6xl mt-20'>Bienvenidos</h1>
+        <p className='text-[#2C2727] mt-8'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur, suscipit.</p>
          <button onClick={handleGetStartedClick} className='text-white bg-orange-600 w-24 h-14 rounded-xl mt-12 hover:bg-gradient-to-r from-red-700 via-red-800 to-amber-400  transition duration-1000 ease'>Get Started</button>
       </div>
       {showModal && (

@@ -1,15 +1,17 @@
 'use client'
 import Header from './Header'
 import SearchBar from './SearchBar'
-
+import "@/public/casa.jpg"
 export default function HomePage() {
   const background = {
-    backgroundImage: "url('https://s1.1zoom.me/b5441/516/England_Houses_Rivers_Bridges_Knaresborough_527029_1080x1920.jpg')",
+    backgroundImage: "url('casa.jpg')",
+    backgroundSize: '100% 100%', // Ajusta el tamaño para mostrar la imagen completa
   };
   return (
-    <div className="bg-fixed bg-cover" style={background}>
+    <div className="  bg-fixed  bg-no-repeat " style={background}>
     <Header />
     <SearchBar />
     </div>
   )
 }
+

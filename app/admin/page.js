@@ -5,8 +5,7 @@ import SlideBar from '@/components/BreadCrum'
 export default function page() {
   return (
     <div>
-        <HeaderAdmin/>
-        <SlideBar/>
+        <Headers/>
     </div>
   )
 }
