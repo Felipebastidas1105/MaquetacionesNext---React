@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ImStatsDots } from "react-icons/im";
 import Link from "next/link";
 import { ArrowLeftRightIcon, BarChart3Icon, Clock4Icon, HelpCircleIcon } from "lucide-react";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 
 const variants = {
   expanded: { width: "20%" },
@@ -14,7 +14,7 @@ function Navbar() {
   const optionStyle="flex space-x-3 w-full p-2 rounded cursor-pointer text-[#F34511] hover:bg-[#F34511] hover:text-white"
 
   return (
-      <motion.div
+      <div
         animate={isExpanded ? "expanded" : "nonexpanded"}
         variants={variants}
         className={`
@@ -96,7 +96,7 @@ function Navbar() {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
   );
 }
 
