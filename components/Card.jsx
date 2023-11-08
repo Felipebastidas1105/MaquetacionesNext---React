@@ -103,7 +103,7 @@ export default function Card() {
                 </div>
                 <div className="text-gray-700 text-center">
                   <TbToolsKitchen2 size={32} color="#F34511" />
-                  <span>3</span>
+                  <span>4</span>
                 </div>
                 <div className="text-gray-700 text-center">
                   <RxRulerHorizontal size={32} color="#F34511" />
