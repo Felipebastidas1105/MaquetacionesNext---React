@@ -86,7 +86,7 @@ export default function ListaInmuebles() {
             );
           })}
         </tbody>
-      </table>
+      </table>  
     </div>
   );
 }
