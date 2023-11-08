@@ -102,10 +102,14 @@ export default function ListaInmuebles() {
             );
           })}
         </tbody>
+<<<<<<< HEAD
       </table>
       <div>
       <h1 className="text-center text-lg text-gray-700 font-bold mt-10">{Loading}</h1>
       </div>
+=======
+      </table>  
+>>>>>>> 791cab5b9d806e1a5396a32c050fdd66e20b8326
     </div>
   );
 }
