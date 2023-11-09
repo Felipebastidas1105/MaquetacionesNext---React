@@ -1,18 +1,7 @@
-"use client";
-import { MdOutlineBedroomChild } from "react-icons/md";
-import { TbBathFilled } from "react-icons/tb";
-import { TbToolsKitchen2 } from "react-icons/tb";
-import { RxRulerHorizontal } from "react-icons/rx";
-import { AiFillHeart } from "react-icons/ai";
-import { useState, useEffect } from "react";
-import { Carousel } from "flowbite";
-import "tailwindcss/tailwind.css";
-import { Target } from "lucide-react";
-import Link from "next/link";
-// import Scroll from "./Scroll";
+import React from 'react'
 
-export default function Card() {
-  const [homes, setHomes] = useState([]);
+export default function Vermas() {
+    const [homes, setHomes] = useState([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const url = "https://inmovilla.onrender.com/api/v1/home";
   const [carga, setCarga] = useState(true);
@@ -43,36 +32,10 @@ export default function Card() {
     };
   }, [currentImageIndex]);
 
-  const TipoTarget = (TargetId) => {
-    let label = "";
-    let color = "";
-
-    switch (TargetId) {
-      case 1:
-        label = "Venta";
-        color = "#008000"; // Color para Venta
-        break;
-      case 2:
-        label = "Renta";
-        color = "#FF0000"; // Color para Renta
-        break;
-      case 3:
-        label = "Permuta";
-        color = "#244cff"; // Color para Permuta
-        break;
-      default:
-        label = "Desconocido";
-        color = "#ccc"; // Color predeterminado
-    }
-
-    return {
-      label,
-      color,
-    };
-  };
-
   return (
-    <div className="flex flex-wrap justify-center space-x-10 bg-white">
+
+    <div>
+         <div className="flex flex-wrap justify-center space-x-10 bg-white">
       {homes.map((home) => {
         const { label, color } = TipoTarget(home.TypetargetId);
         return (
@@ -175,5 +138,6 @@ export default function Card() {
         );
       })}
     </div>
-  );
+    </div>
+  )
 }
