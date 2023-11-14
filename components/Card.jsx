@@ -9,6 +9,8 @@ import { Carousel } from "flowbite";
 import "tailwindcss/tailwind.css";
 import { Target } from "lucide-react";
 import Link from "next/link";
+import { Card } from "@windmill/react-ui";
+import { Skeleton } from "@nextui-org/react";
 // import Scroll from "./Scroll";
 
 export default function Tarjeta() {
@@ -23,7 +25,7 @@ export default function Tarjeta() {
     const fetchData = async () => {
       const response = await fetch(url);
       const data = await response.json();
-      console.log(data);  
+      console.log(data);
       setHomes(data.data);
     };
     if (carga) {
@@ -104,14 +106,21 @@ export default function Tarjeta() {
   }
   return (
     <div className="flex flex-wrap justify-center space-x-10 flex-row">
-      <div className={` ${!isLoaded ? 'flex' : 'hidden'}`}>
-      {MyComponent(isLoaded)}
+      <div className={` ${!isLoaded ? "flex" : "hidden"}`}>
+        {MyComponent(isLoaded)}
       </div>
-      
-      <div className={` ${!isLoaded ? 'hidden' : 'flex'} flex-wrap justify-center space-x-10 bg-white `}>
+
+      <div
+        className={` ${
+          !isLoaded ? "hidden" : "flex"
+        } flex-wrap justify-center space-x-10 bg-white `}
+      >
         {homes.map((home) => {
           return (
-            <div className="max-w-xs transition   lg:max-w-sm bg-white border border-gray-300 p-2  shadow-2xl dark:bg-gray-800 dark:border-gray-700 my-6 lg:my-12 mx-2git m-7 hover:-translate-y-2 rounded-lg">
+            <div
+              key={home.id}
+              className="max-w-xs transition   lg:max-w-sm bg-white border border-gray-300 p-2  shadow-2xl dark:bg-gray-800 dark:border-gray-700 my-6 lg:my-12 mx-2git m-7 hover:-translate-y-2 rounded-lg"
+            >
               <a href="#">
                 <div className="relative rounded-lg">
                   <div className="relative  overflow-hidden rounded-lg md:h-96">
@@ -121,9 +130,10 @@ export default function Tarjeta() {
                       alt="..."
                     ></img>
                   </div>
-                  <div className="sale-indicator shadow-sm shadow-white absolute top-2 left-2 bg-[#F34511]  text-white text-xs p-1 rounded-lg">
+
+                  {/* <div className="sale-indicator shadow-sm shadow-white absolute top-2 left-2 bg-[#F34511]  text-white text-xs p-1 rounded-lg">
                     {TipoTarget(home.TypetargetId)}
-                  </div>
+                  </div> */}
                 </div>
               </a>
               <div className="p-2 my-6">
@@ -170,27 +180,27 @@ export default function Tarjeta() {
 
                 <div className="flex items-center justify-between">
                   <button>
-                  <Link
-                    href="/visual"
-                    className="inline-flex shadow-md shadow-stone-600 items-center px-2 py-2 font-medium text-center text-white bg-[#2C2727]  rounded-lg hover:bg-[#3b3939] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-orange-700 dark:focus:ring-blue-800 ml-32"
-                  >
-                    Ver Más
-                    <svg
-                      className="w-3.5 h-3.5 ml-2"
-                      aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 14 10"
+                    <Link
+                      href={`/visual?id=${home.id}`}
+                      className="inline-flex shadow-md shadow-stone-600 items-center px-2 py-2 font-medium text-center text-white bg-[#2C2727]  rounded-lg hover:bg-[#3b3939] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-orange-700 dark:focus:ring-blue-800 ml-32"
                     >
-                      <path
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M1 5h12m0 0L9 1m4 4L9 9"
-                      />
-                    </svg>
-                  </Link>
+                      Ver Más
+                      <svg
+                        className="w-3.5 h-3.5 ml-2"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 14 10"
+                      >
+                        <path
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M1 5h12m0 0L9 1m4 4L9 9"
+                        />
+                      </svg>
+                    </Link>
                   </button>
                   <div>
                     <a
