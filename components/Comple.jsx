@@ -1,10 +1,11 @@
 import React from 'react';
-import '@/public/casa13.jpg';
+// import '@/public/casa13.jpg';
 import { MdOutlineBedroomChild } from 'react-icons/md';
 import { TbBathFilled } from 'react-icons/tb';
 import { TbToolsKitchen2 } from 'react-icons/tb';
 import { RxRulerHorizontal } from 'react-icons/rx';
 import {MdWhatsapp} from 'react-icons/md';
+import 'tailwindcss/tailwind.css';
 
 export default function Comple() {
   return (

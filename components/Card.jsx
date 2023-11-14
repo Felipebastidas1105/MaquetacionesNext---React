@@ -9,6 +9,7 @@ import { Carousel } from "flowbite";
 import "tailwindcss/tailwind.css";
 import { Target } from "lucide-react";
 import Link from "next/link";
+import { Card, Skeleton } from "@nextui-org/react";
 // import Scroll from "./Scroll";
 
 export default function Tarjeta() {
