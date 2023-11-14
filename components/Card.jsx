@@ -8,8 +8,7 @@ import { useState, useEffect } from "react";
 import { Carousel } from "flowbite";
 import "tailwindcss/tailwind.css";
 import { Target } from "lucide-react";
-import { Card, Skeleton, Button } from "@nextui-org/react";
-
+import Link from "next/link";
 // import Scroll from "./Scroll";
 
 export default function Tarjeta() {
@@ -45,12 +44,34 @@ export default function Tarjeta() {
     return () => {
       clearInterval(interval);
     };
-  }, []);
+  }, [currentImageIndex]);
 
   const TipoTarget = (TargetId) => {
-    if (TargetId === 1) return "Venta";
-    else if (TargetId === 2) return "Renta";
-    else return "Permuta";
+    let label = "";
+    let color = "";
+
+    switch (TargetId) {
+      case 1:
+        label = "Venta";
+        color = "#008000"; // Color para Venta
+        break;
+      case 2:
+        label = "Renta";
+        color = "#FF0000"; // Color para Renta
+        break;
+      case 3:
+        label = "Permuta";
+        color = "#244cff"; // Color para Permuta
+        break;
+      default:
+        label = "Desconocido";
+        color = "#ccc"; // Color predeterminado
+    }
+
+    return {
+      label,
+      color,
+    };
   };
 
   function MyComponent(isLoaded) {
@@ -149,24 +170,27 @@ export default function Tarjeta() {
 
                 <div className="flex items-center justify-between">
                   <button>
-                    <a className="inline-flex shadow-md shadow-stone-600 items-center px-2 py-2 font-medium text-center text-white bg-[#2C2727]  rounded-lg hover:bg-[#3b3939] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-orange-700 dark:focus:ring-blue-800 ml-32">
-                      Ver Más
-                      <svg
-                        className="w-3.5 h-3.5 ml-2"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 14 10"
-                      >
-                        <path
-                          stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M1 5h12m0 0L9 1m4 4L9 9"
-                        />
-                      </svg>
-                    </a>
+                  <Link
+                    href="/visual"
+                    className="inline-flex shadow-md shadow-stone-600 items-center px-2 py-2 font-medium text-center text-white bg-[#2C2727]  rounded-lg hover:bg-[#3b3939] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-orange-700 dark:focus:ring-blue-800 ml-32"
+                  >
+                    Ver Más
+                    <svg
+                      className="w-3.5 h-3.5 ml-2"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 14 10"
+                    >
+                      <path
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M1 5h12m0 0L9 1m4 4L9 9"
+                      />
+                    </svg>
+                  </Link>
                   </button>
                   <div>
                     <a

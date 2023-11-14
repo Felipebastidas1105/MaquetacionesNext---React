@@ -70,11 +70,6 @@
 
 
 
-
-
-
-
-
 import { useState } from 'react';
 import { BiSearchAlt } from 'react-icons/bi'
 import LoginModal from './LoginModal';
