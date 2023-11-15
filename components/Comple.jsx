@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 // import '@/public/casa13.jpg';
 import { MdOutlineBedroomChild } from "react-icons/md";
 import { TbBathFilled } from "react-icons/tb";
@@ -8,9 +8,17 @@ import { RxRulerHorizontal } from "react-icons/rx";
 import { MdWhatsapp } from "react-icons/md";
 import "tailwindcss/tailwind.css";
 
+import Map from 'ol/Map.js';
+import View from 'ol/View.js';
+import TileLayer from 'ol/layer/Tile.js';
+import OSM from 'ol/source/OSM.js';
+
+
 export default function Comple() {
   const [Home, SetHome] = useState([]);
   const [isLoad, SetLoad] = useState(false);
+  const mapRef = useRef(null);
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,7 +32,7 @@ export default function Comple() {
           const data = await response.json();
           console.log(data.data);
           SetHome(data.data);
-          
+
           if (response.status == 200) {
             SetLoad(true);
           }
@@ -36,18 +44,58 @@ export default function Comple() {
     fetchData();
   }, []);
 
+  // useEffect(() => {
+  //   const map = new Map({
+  //     target: 'map',
+  //     layers: [
+  //       new TileLayer({
+  //         source: new OSM(),
+  //       }),
+  //     ],
+  //     view: new View({
+  //       center: [0, 0],
+  //       zoom: 2,
+  //     }),
+  //   });
+  // }, []);
+
+  useEffect(() => {
+    console.log(mapRef.current)
+    if (!mapRef.current) {
+      const newMap = new Map({
+        target: 'map',
+        layers: [
+          new TileLayer({
+            source: new OSM(),
+          }),
+        ],
+        view: new View({
+          center: [0, 0],
+          zoom: 2,
+        }),
+      });
+
+      mapRef.current = newMap;
+    }
+
+
+  }, []);
+
+
   return (
     <div>
       <div className={` ${!isLoad ? "flex" : "hidden"}`}>
         Cargando ....
       </div>
-      <div className={`items-center mb-14 ml-36 ${` ${!isLoad ? "hidden" : "flex"}`}`}>
-        <div className="flex-1 mr-10">
+      <div className={`items-center mb-14  flex flex-col  ${` ${!isLoad ? "hidden" : "flex"}`}`}>
+
+       <div className="flex flex-row ">
+        <div className="flex-1 mr-10 border border-red-500 ">
           <h1 className="text-3xl font-semibold mt-7 mb-2 ml-20">Casa</h1>
           <p className="mt-2 ml-20">{Home.Ubicacion}</p>
           {/* <img src={Home.Imagen[1]} className="rounded-2xl mx-14" /> */}
 
-          <div className="flex mx-16 pt-3 space-x-11">
+          <div className="flex mx-16 pt-3 space-x-7">
             <div className="text-gray-700">
               <MdOutlineBedroomChild size={32} color="#F34511" />
               <span>{Home.Cant_Cuartos}</span>
@@ -136,9 +184,18 @@ export default function Comple() {
                 Contactar con WhatsApp
               </span>
             </button>
+
           </div>
         </div>
-      </div>
+        </div>
+
+       
+
+        </div>
+        <div id="map" className="" style={{ width: '100%', height: '500px',border: '1px solid'}}></div>
+      
+  
     </div>
   );
 }
+
