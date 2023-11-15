@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import '@/public/room.jpeg'
-import '@/public/room.gif'
+import '@/public/casa.gif'
 import {FcGoogle} from 'react-icons/fc';
 import {ImCancelCircle} from 'react-icons/im';
 
@@ -92,7 +92,7 @@ function LoginModal({ onClose }) {
         
         <div class="relative">
           <img
-            src="room.gif"
+            src="casa.gif"
             alt="img"
             class="w-[400px] h-full hidden rounded-r-2xl md:block object-cover"
           />
