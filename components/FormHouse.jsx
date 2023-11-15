@@ -191,18 +191,14 @@ export default function FormHouse() {
             <Radio
               value="Si"
               checked={formFields.Tiene_Garaje_Moto === "Si"}
-              onChange={() =>
-                handleRadioChange("Tiene_Garaje_Moto", "Si")
-              }
+              onChange={() => handleRadioChange("Tiene_Garaje_Moto", "Si")}
             >
               Si
             </Radio>
             <Radio
               value="No"
               checked={formFields.Tiene_Garaje_Moto === "No"}
-              onChange={() =>
-                handleRadioChange("Tiene_Garaje_Moto", "No")
-              }
+              onChange={() => handleRadioChange("Tiene_Garaje_Moto", "No")}
             >
               No
             </Radio>
@@ -213,18 +209,14 @@ export default function FormHouse() {
             <Radio
               value="Si"
               checked={formFields.Tiene_Garaje_Carro === "Si"}
-              onChange={() =>
-                handleRadioChange("Tiene_Garaje_Carro", "Si")
-              }
+              onChange={() => handleRadioChange("Tiene_Garaje_Carro", "Si")}
             >
               Si
             </Radio>
             <Radio
               value="No"
               checked={formFields.Tiene_Garaje_Carro === "No"}
-              onChange={() =>
-                handleRadioChange("Tiene_Garaje_Carro", "No")
-              }
+              onChange={() => handleRadioChange("Tiene_Garaje_Carro", "No")}
             >
               No
             </Radio>
@@ -235,18 +227,14 @@ export default function FormHouse() {
             <Radio
               value="Si"
               checked={formFields.Tiene_Patio === "Si"}
-              onChange={() =>
-                handleRadioChange("Tiene_Patio", "Si")
-              }
+              onChange={() => handleRadioChange("Tiene_Patio", "Si")}
             >
               Si
             </Radio>
             <Radio
               value="No"
               checked={formFields.Tiene_Patio === "No"}
-              onChange={() =>
-                handleRadioChange("Tiene_Patio", "No")
-              }
+              onChange={() => handleRadioChange("Tiene_Patio", "No")}
             >
               No
             </Radio>
@@ -257,51 +245,53 @@ export default function FormHouse() {
             <Radio
               value="Casa"
               checked={formFields.TypehousingId === "1"}
-              onChange={() =>
-                handleRadioChange("TypehousingId", "1")
-              }
+              onChange={() => handleRadioChange("TypehousingId", "1")}
             >
               Casa
             </Radio>
             <Radio
               value="Departamento"
               checked={formFields.TypehousingId === "2"}
-              onChange={()=> handleRadioChange("TypehousingId","2")}
+              onChange={() => handleRadioChange("TypehousingId", "2")}
             >
               Departamento
             </Radio>
             <Radio
               value="ApartaEstudio"
               checked={formFields.TypehousingId === "3"}
-              onChange={()=> handleRadioChange("TypehousingId","3")}
+              onChange={() => handleRadioChange("TypehousingId", "3")}
             >
               ApartaEstudio
             </Radio>
-            <Radio value="Finca" 
+            <Radio
+              value="Finca"
               checked={formFields.TypehousingId === "4"}
-              onChange={()=> handleRadioChange("TypehousingId","4")}>
+              onChange={() => handleRadioChange("TypehousingId", "4")}
+            >
               Finca
             </Radio>
           </RadioGroup>
         </div>
         <div className="flex w-full flex-wrap md:flex-nowrap gap-4">
           <RadioGroup label="Tipo de negocio" required>
-            <Radio value="Casa" 
+            <Radio
+              value="Casa"
               checked={formFields.TypetargetId === "1"}
-              onChange={()=> handleRadioChange("TypetargetId","1")}>
+              onChange={() => handleRadioChange("TypetargetId", "1")}
+            >
               Venta
             </Radio>
             <Radio
               value="Departamento"
               checked={formFields.TypetargetId === "2"}
-              onChange={()=> handleRadioChange("TypetargetId","2")}
+              onChange={() => handleRadioChange("TypetargetId", "2")}
             >
               Renta
             </Radio>
             <Radio
               value="ApartaEstudio"
               checked={formFields.TypetargetId === "3"}
-              onChange={()=> handleRadioChange("TypetargetId","2")}
+              onChange={() => handleRadioChange("TypetargetId", "2")}
             >
               Permuta
             </Radio>
