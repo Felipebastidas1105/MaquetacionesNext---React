@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ImStatsDots } from "react-icons/im";
 import Link from "next/link";
 import { ArrowLeftRightIcon, BarChart3Icon, Clock4Icon, HelpCircleIcon } from "lucide-react";
-// import { motion } from "framer-motion";
 
 const variants = {
   expanded: { width: "20%" },
@@ -11,6 +10,13 @@ const variants = {
 
 function Navbar() {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [selectedButton,SetSelectedButton] = useState('')
+  const MyLocation = window.location.pathname
+  console.log(selectedButton)
+  useEffect(()=>{
+    SetSelectedButton(MyLocation)
+  },[MyLocation])  
+
   const optionStyle="flex space-x-3 w-full p-2 rounded cursor-pointer text-[#F34511] hover:bg-[#F34511] hover:text-white"
 
   return (
@@ -40,23 +46,24 @@ function Navbar() {
           <span className={`text-[#F34511]  ${!isExpanded ? 'hidden' : 'block'}`}>InmoVilla</span>
         </div>
         <div className="flex flex-col space-y-8 mt-12">
-          <div className="nav-links w-full">
+          <div className="nav-links w-full"
+          style={{ background: selectedButton === '/admin/historiales' ? '#F34511' : 'transparent' }}>
             <div className={optionStyle}>
               <Link href="/admin/historiales" className="flex flex-row space-x-3">
-                
-                  <ImStatsDots/>
-                  
-                <span className={`text-white  ${(!isExpanded ? "hidden" : "block")}`}>
+                  <ImStatsDots 
+                  style={{ color: selectedButton === '/admin/historiales' ? '#FFFFFF' : '#F34511' }}/>
+                <span className={`text-white ${(!isExpanded ? "hidden" : "block")}`}>
                   Historiales
                 </span>
               </Link>
             </div>
           </div>
 
-          <div className="nav-links w-full">
+          <div className="nav-links w-full"
+          style={{ background: selectedButton === '/admin/AgregarInmuebles' ? '#F34511' : 'transparent' }}>
             <div className={optionStyle}>
               <Link href="/admin/AgregarInmuebles" className="flex flex-row  space-x-3 ">
-                <Clock4Icon className=" transition-all duration-300 hover:text-white" />
+                <Clock4Icon style={{ color: selectedButton === '/admin/AgregarInmuebles' ? '#FFFFFF' : '#F34511' }} className=" transition-all duration-300 hover:text-white" />
                 <span className={`text-white ${!isExpanded ? "hidden" : "block"}`}>
                   Agregar&nbsp;inmuebles
                 </span>

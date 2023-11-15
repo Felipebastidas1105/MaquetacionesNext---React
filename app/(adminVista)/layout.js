@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
         <div className="flex flex-row">
           <Navbar />
           <main className="w-full p-10">
-            <Breadcrumb/>
+            {/* <Breadcrumb/> */}
             {children}
           </main>
         </div>

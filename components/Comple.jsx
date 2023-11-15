@@ -11,7 +11,6 @@ import "tailwindcss/tailwind.css";
 export default function Comple() {
   const [Home, SetHome] = useState([]);
   const [isLoad, SetLoad] = useState(false);
-  const [Images,SetImages] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
