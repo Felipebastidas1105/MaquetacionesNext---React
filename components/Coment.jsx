@@ -1,72 +1,53 @@
-import React from 'react';
+import Image from "next/image"
 
-export default function Coment() {
+const clients =
+[{
+    text: 'this is a template figma file',
+    author_image: '/public/author1.jpg',
+    author: 'gemma nolen',
+    ranking: 5,
+    company: 'Google',
+    inicio:'uiii'
+},
+{
+    text: 'this is a template figma file',
+    author_image: 'author2.jpg',
+    author: 'gemma nolen',
+    ranking: 5,
+    company:'Google'
+},
+{
+    text: 'this is a template figma file',
+    author_image: 'author3.jpg',
+    author: 'gemma nolen',
+    ranking: 5,
+    company:'Google'
+},
+]
+
+const Coment= () => {
   return (
-<section class="bg-white dark:bg-gray-900 ">
-    <div class="container px-6 py-10 mx-auto">
-        <h1 class="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">
-            What our <span class="text-blue-500 ">clients</span> say
-        </h1>
-
-        <p class="max-w-2xl mx-auto mt-6 text-center text-gray-500 dark:text-gray-300">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo incidunt ex placeat modi magni quia error
-            alias, adipisci rem similique, at omnis eligendi optio eos harum.
-        </p>
-
-        <section class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 lg:grid-cols-2 xl:grid-cols-3">
-            <div class="p-8 border rounded-lg dark:border-gray-700">
-                <p class="leading-loose text-gray-500 dark:text-gray-400">
-                    “Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore quibusdam ducimus libero ad
-                    tempora doloribus expedita laborum saepe voluptas perferendis delectus assumenda rerum, culpa
-                    aperiam dolorum, obcaecati corrupti aspernatur a.”.
-                </p>
-
-                <div class="flex items-center mt-8 -mx-2">
-                    <img class="object-cover mx-2 rounded-full w-14 shrink-0 h-14 ring-4 ring-gray-300 dark:ring-gray-700" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt=""/>
-
-                    <div class="mx-2">
-                        <h1 class="font-semibold text-gray-800 dark:text-white">Robert</h1>
-                        <span class="text-sm text-gray-500">CTO, Robert Consultency</span>
-                    </div>
-                </div>
+    <>
+    <h2 className="bg-red-800">Clients</h2>
+    <div className="bg-red-600">
+     {
+      clients.map((client,index)=>{
+        <div key={index}>
+            <h3>{client.inicio}</h3>
+            <div>
+                <Image src={`/public/${client.author_image}`} alt="author_img"  width='50'   heigth='50' ></Image>
+                <p>
+                    <Image src={'/public/star.jpg'} width='50'   heigth='50' />
+                    {client.author}<br />
+                    {client.company}</p>
             </div>
-
-            <div class="p-8 border rounded-lg dark:border-gray-700">
-                <p class="leading-loose text-gray-500 dark:text-gray-400">
-                    “Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore quibusdam ducimus libero ad
-                    tempora doloribus expedita laborum saepe voluptas perferendis delectus assumenda rerum, culpa
-                    aperiam dolorum, obcaecati corrupti aspernatur a.”.
-                </p>
-
-                <div class="flex items-center mt-8 -mx-2">
-                    <img class="object-cover mx-2 rounded-full w-14 shrink-0 h-14 ring-4 ring-gray-300 dark:ring-gray-700" src="https://images.unsplash.com/photo-1531590878845-12627191e687?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" alt=""/>
-
-                    <div class="mx-2">
-                        <h1 class="font-semibold text-gray-800 dark:text-white">Jeny Doe</h1>
-                        <span class="text-sm text-gray-500">CEO, Jeny Consultency</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="p-8 border rounded-lg dark:border-gray-700">
-                <p class="leading-loose text-gray-500 dark:text-gray-400">
-                    “Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore quibusdam ducimus libero ad
-                    tempora doloribus expedita laborum saepe voluptas perferendis delectus assumenda rerum, culpa
-                    aperiam dolorum, obcaecati corrupti aspernatur a.”.
-                </p>
-
-                <div class="flex items-center mt-8 -mx-2">
-                    <img class="object-cover mx-2 rounded-full w-14 shrink-0 h-14 ring-4 ring-gray-300 dark:ring-gray-700" src="https://images.unsplash.com/photo-1488508872907-592763824245?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt=""/>
-
-                    <div class="mx-2">
-                        <h1 class="font-semibold text-gray-800 dark:text-white">Ema Watson </h1>
-                        <span class="text-sm text-gray-500">Marketing Manager at Stech</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+           
+        </div>
+      }) 
+    }
     </div>
-</section>
+    </>
 
   );
 }
+export default Coment;
