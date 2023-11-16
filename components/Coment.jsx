@@ -71,9 +71,19 @@ const settings = {
   dots: true,
   autoplay: true, 
   infinite: true,
-  autoplaySpeed: 1500,
+  autoplaySpeed: 2000,
   slidesToShow: 3, // Ajusta el número de comentarios visibles
-  slidesToScroll: 1
+  slidesToScroll: 1,
+  responsive:[
+    {
+      breakpoint:500,
+      settings:
+      {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      }
+    }
+  ]
 };
 
 
@@ -82,7 +92,7 @@ const Coment = () => {
   return (
     <>
  
-    <div className='bg-gray-100 h-[650px] z-50'>
+    <div className='bg-gray-100 h-[650px] z-50 lg:px-20 md:px-6'>
       <h2 className={style.testimonial_title} >Comentarios</h2>
       <div className='w-full overflow-hidden '>
 
