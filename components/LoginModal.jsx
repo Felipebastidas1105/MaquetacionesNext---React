@@ -33,11 +33,12 @@ function LoginModal({ onClose }) {
 
 
   return (
+<div class="fixed top-0 left-0 w-full h-full flex items-center justify-center min-h-screen bg-black bg-opacity-[88%] z-50">
+      <div class="relative flex flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0 ">
 
-<div class="fixed  top-0 left-0 w-full h-full flex items-center justify-center min-h-screen ">
-      <div
-        class="relative flex flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0"
-      >
+        <div className='fixed'>
+        <button className='text-gray-800 bg-gray-200 px-4 py-2 rounded-lg mt-4' onClick={onClose}><ImCancelCircle/> </button>
+        </div>
        
         <div onSubmit={handleSubmit} class="flex flex-col justify-center p-8 md:p-14">
           <span class="mb-3 text-4xl font-bold">Welcome back</span>

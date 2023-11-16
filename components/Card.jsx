@@ -209,7 +209,7 @@ export default function Tarjeta() {
                     >
                       <AiFillHeart
                         size={40}
-                        className="text-transparent   transition-colors hover:text-red-700"
+                        className=" text-red-700 transition-colors hover:text-[#F34511]"
                       />
                     </a>
                   </div>

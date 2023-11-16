@@ -9,7 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const clients =
 [{
-    text: 'this is a template figma file',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium porro excepturi ratione quos nostrum, reiciendis ea illo temporibus alias fuga tenetur architecto asperiores voluptas illum tempore, repellat, expedita nulla dignissimos.',
     author_image: 'author1.jpg',
     author: 'gemma nolen',
     ranking: '🟌',
@@ -18,7 +18,7 @@ const clients =
     inicio:'uiii'
 },
 {
-    text: 'this is a template figma file',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium porro excepturi ratione quos nostrum, reiciendis ea illo temporibus alias fuga tenetur architecto asperiores voluptas illum tempore, repellat, expedita nulla dignissimos.',
     author_image: 'author2.jpg',
     author: 'gemma nolen',
     ranking: '🟌',
@@ -26,7 +26,7 @@ const clients =
     company:'Google'
 },
 {
-    text: 'this is a template figma file',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium porro excepturi ratione quos nostrum, reiciendis ea illo temporibus alias fuga tenetur architecto asperiores voluptas illum tempore, repellat, expedita nulla dignissimos.',
     author_image: 'author3.jpg',
     author: 'gemma nolen',
     ranking: '🟌',
@@ -34,32 +34,32 @@ const clients =
     company:'Google'
 },
 {
-    text: 'this is a template figma file',
-    author_image: 'author2.jpg',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium porro excepturi ratione quos nostrum, reiciendis ea illo temporibus alias fuga tenetur architecto asperiores voluptas illum tempore, repellat, expedita nulla dignissimos.',
+    author_image: 'author4.jpg',
     author: 'gemma nolen',
     ranking: '🟌',
     ranking_repeat: 2,
     company:'Google'
 },
 {
-    text: 'this is a template figma file',
-    author_image: 'author3.jpg',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium porro excepturi ratione quos nostrum, reiciendis ea illo temporibus alias fuga tenetur architecto asperiores voluptas illum tempore, repellat, expedita nulla dignissimos.',
+    author_image: 'author5.jpg',
     author: 'gemma nolen',
     ranking: '🟌',
     ranking_repeat: 1,
     company:'Google'
 },
 {
-    text: 'this is a template figma file',
-    author_image: 'author2.jpg',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium porro excepturi ratione quos nostrum, reiciendis ea illo temporibus alias fuga tenetur architecto asperiores voluptas illum tempore, repellat, expedita nulla dignissimos.',
+    author_image: 'author6.jpg',
     author: 'gemma nolen',
     ranking: '🟌',
     ranking_repeat: 2,
     company:'Google'
 },
 {
-    text: 'this is a template figma file',
-    author_image: 'author3.jpg',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium porro excepturi ratione quos nostrum, reiciendis ea illo temporibus alias fuga tenetur architecto asperiores voluptas illum tempore, repellat, expedita nulla dignissimos.',
+    author_image: 'author7.jpg',
     author: 'gemma nolen',
     ranking: '🟌',
     ranking_repeat: 1,
@@ -81,16 +81,17 @@ const settings = {
 const Coment = () => {
   return (
     <>
-    <div className='bg-white h-[650px]'>
+ 
+    <div className='bg-gray-100 h-[650px] z-50'>
       <h2 className={style.testimonial_title} >Comentarios</h2>
-      <div className='w-full overflow-hidden'>
+      <div className='w-full overflow-hidden '>
 
         <Slider {...settings}>
           {clients.map((client, index) => (
             <div key={index} className={style.testimonial}>
               <h3>{client.text}</h3>
               <div className={style.author}>
-                <Image src={`/assets/img/${client.author_image}`} alt="author_img" width='50' height='50' />
+                <Image src={`/assets/img/${client.author_image}`} alt="author_img" width='50' height='40' />
                 <p>
                   {client.ranking.repeat(client.ranking_repeat)}
                   {client.author}<br />
