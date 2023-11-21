@@ -1,19 +1,23 @@
-import React, { useState,useEffect } from 'react';
-import '@/public/room.jpeg'
-import '@/public/casa.gif'
-import {FcGoogle} from 'react-icons/fc';
-import {ImCancelCircle} from 'react-icons/im';
+import React, { useState, useEffect } from 'react';
+import { FcGoogle } from 'react-icons/fc';
+import { ImCancelCircle } from 'react-icons/im';
 
 function LoginModal({ onClose }) {
-  const [email, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isSignUp, setIsSignUp] = useState(false);
+  const [showPassword,setshowpassword]= useState(false);
 
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
   };
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
+  };
+
+  const handleFormToggle = () => {
+    setIsSignUp(!isSignUp);
   };
 
   const handleSubmit = (event) => {
@@ -22,90 +26,145 @@ function LoginModal({ onClose }) {
   };
 
   useEffect(() => {
-    // Al abrir el modal, deshabilitar el scroll en el body
     document.body.style.overflow = 'hidden';
 
-    // Al cerrar el modal, habilitar el scroll en el body
     return () => {
       document.body.style.overflow = 'auto';
     };
   }, []);
 
-
   return (
-<div class="fixed top-0 left-0 w-full h-full flex items-center justify-center min-h-screen bg-black bg-opacity-[88%] z-50">
-      <div class="relative flex flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0 ">
 
-        <div className='fixed'>
-        <button className='text-gray-800 bg-gray-200 px-4 py-2 rounded-lg mt-4' onClick={onClose}><ImCancelCircle/> </button>
-        </div>
-       
-        <div onSubmit={handleSubmit} class="flex flex-col justify-center p-8 md:p-14">
-          <span class="mb-3 text-4xl font-bold">Welcome back</span>
-          <span class="font-light text-gray-400 mb-8">
-            Welcom back! Please enter your details
-          </span>
-          <div class="py-4">
-            <span class="mb-2 text-md">Email</span>
-            <input
-              type="text"
-              class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
-              name="email"
-              value={email}
-              onChange={handleUsernameChange}
-              id="email"
-            />
-          </div>
-          <div class="py-4">
-            <span class="mb-2 text-md">Password</span>
-            <input
-              type="password"
-              name="password"
-              id="password"
-              value={password}
-              onChange={handlePasswordChange}
-              class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
-            />
-          </div>
-          <div class="flex justify-between w-full py-4">
-            <div class="mr-24">
-              <input type="checkbox" name="ch" id="ch" class="mr-2" />
-              <span class="text-md">Remember for 30 days</span>
+<div className="fixed top-0 left-0 w-full h-full flex items-center justify-center min-h-screen bg-black bg-opacity-[88%] z-50">
+  <div className="relative flex flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl h-[800px] md:flex-row md:space-y-0    ">
+
+    <div className="absolute top-4 left-4">
+      <button className="text-gray-800  px-4 py-2 rounded-lg" onClick={onClose}>
+        <ImCancelCircle />
+      </button>
+    </div>
+
+    <div onSubmit={handleSubmit} className="w-[600px] flex flex-col justify-center p-8 md:p-14 overflow-y-auto">
+      <span className={`text-4xl  font-bold ${isSignUp?'pt-56 ':'' }`}>{isSignUp ? 'Sign up' : 'Welcome back'}</span>
+      <span className="font-light text-gray-400 mb-8">
+        {isSignUp ? 'Create your account' : 'Welcome back! Please enter your details'}
+      </span>
+
+      <form className='flex flex-col lg:w-full md:w-full lg:py-4'>
+
+          {isSignUp && (
+              <div className="py-4">
+                <span className="mb-2 text-md">Confirm Password</span>
+                <input
+                  type="password"
+                  name="confirmPassword"
+                  id="confirmPassword"
+                  className="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+                />
+              </div>
+            )}
+          {isSignUp && (
+              <div className="py-4">
+                <span className="mb-2 text-md">Confirm Password</span>
+                <input
+                  type="password"
+                  name="confirmPassword"
+                  id="confirmPassword"
+                  className="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+                />
+              </div>
+            )}
+          {isSignUp && (
+              <div className="py-4">
+                <span className="mb-2 text-md">Confirm Password</span>
+                <input
+                  type="password"
+                  name="confirmPassword"
+                  id="confirmPassword"
+                  className="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+                />
+              </div>
+            )}
+          {isSignUp && (
+              <div className="py-4">
+                <span className="mb-2 text-md">Confirm Password</span>
+                <input
+                  type="password"
+                  name="confirmPassword"
+                  id="confirmPassword"
+                  className="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+                />
+              </div>
+            )}
+            <div className="py-4">
+              <span className="mb-2 text-md">Email</span>
+              <input
+                type="text"
+                className="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+                name="email"
+                value={email}
+                onChange={handleEmailChange}
+                id="email"
+              />
             </div>
-            <span class="font-bold text-md">Forgot password</span>
-          </div>
-          <button
-            class="w-full bg-black text-white p-2 rounded-lg mb-6 hover:bg-white hover:text-black hover:border hover:border-gray-300"
-          >
-            Sign in
-          </button>
-          <button
-            class="w-full border border-gray-300 text-md p-2 rounded-lg mb-6 hover:bg-black hover:text-white"
-          >
-            < FcGoogle class="w-6 h-6 inline mr-2" />
-            Sign in with Google
-          </button>
-          <div class="text-center text-gray-400">
-            Dont'have an account?
-            <span class="font-bold text-black">Sign up for free</span>
-          </div>
-        </div>
-        
-        <div class="relative">
-          <img
-            src="casa.gif"
-            alt="img"
-            class="w-[400px] h-full hidden rounded-r-2xl md:block object-cover"
-          />
-         
-         <div class="absolute hidden items-center justify-center mx-2 bottom-10 p-6 bg-white bg-opacity-30 backdrop-blur-sm rounded drop-shadow-lg md:flex md:items-center md:justify-center">
-           <span class="text-black text-xl">
-            Bienvenido a la inmobiliaria Inmo<span className='text-[#F34511]'>Villa</span>
-           </span>
-          </div>
-        </div>
+            <div className="py-4">
+              <span className="mb-2 text-md">Password</span>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                value={password}
+                onChange={handlePasswordChange}
+                onClick={() => setshowpassword(!showPassword)}
+                className="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+              />
+            </div>
+            
+            <div className="flex justify-between w-full py-4">
+              <div className="mr-24">
+                <input type="checkbox" name="remember" id="remember" className="mr-2" />
+                <span className="text-md">Remember for 30 days</span>
+              </div>
+              <span className="font-bold text-md" onClick={handleFormToggle}>
+                {isSignUp ? '' : 'Forgot password?'}
+              </span>
+            </div>
+        <button
+          className="w-full bg-black text-white p-2 rounded-lg mb-6 hover:bg-white hover:text-black hover:border hover:border-gray-300"
+        >
+          {isSignUp ? 'Registrarse' : 'Iniciar Sesión'}
+        </button>
+      </form>
+
+      {/* Other buttons... */}
+      <div className="text-center text-gray-400">
+        {isSignUp ? "Ya tienes una cuenta?" : "No tienes cuenta?"}
+        <button className="font-bold text-black" onClick={handleFormToggle}>
+          {isSignUp ? 'Iniciar Sesión' : ' Registrarse'}
+        </button>
       </div>
     </div>
+      <div className="relative   ">
+        <img
+             src="room.gif"
+             alt="img"
+             className=" h-full hidden rounded-r-2xl md:block object-cover"
+          />
+          <div className="absolute hidden items-center justify-center mx-2 bottom-10 p-6 bg-white bg-opacity-30 backdrop-blur-sm rounded drop-shadow-lg md:flex md:items-center md:justify-center">
+            <span className="text-black text-xl">
+              Bienvenido a la inmobiliaria Inmo<span className='text-[#F34511]'>Villa</span>
+            </span>
+          </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
   );
 }
 

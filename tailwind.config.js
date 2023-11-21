@@ -2,6 +2,7 @@ const { nextui } = require('@nextui-org/react');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+ 
   darkMode: ["class"],
   content: [
     './pages/**/*.{js,jsx}',
@@ -15,10 +16,13 @@ module.exports = {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1400px" 
       },
     },
     extend: {
+      screens:{
+        'xs': "360px" 
+      },
       keyframes: {
         "accordion-down": {
           from: { height: 0 },
@@ -33,6 +37,9 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      // backgroundImage:{
+      //   'fondo':'url(../public/fondo2.jpg)'
+      // }
     },
   },
   darkMode: "class",

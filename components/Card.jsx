@@ -105,7 +105,7 @@ export default function Tarjeta() {
     return <>{renderCards()}</>;
   }
   return (
-    <div className="flex flex-wrap justify-center space-x-10 flex-row">
+    <div className="flex flex-wrap justify-center  flex-row">
       <div className={` ${!isLoaded ? "flex" : "hidden"}`}>
         {MyComponent(isLoaded)}
       </div>
@@ -119,7 +119,7 @@ export default function Tarjeta() {
           return (
             <div
               key={home.id}
-              className="max-w-xs transition   lg:max-w-sm bg-white border border-gray-300 p-2  shadow-2xl dark:bg-gray-800 dark:border-gray-700 my-6 lg:my-12 mx-2git m-7 hover:-translate-y-2 rounded-lg"
+              className="max-w-xs transition  bg-white border border-gray-300 p-2  shadow-2xl dark:bg-gray-800 dark:border-gray-700 my-6 lg:my-12 mx-2git m-7 hover:-translate-y-2 rounded-lg"
             >
               <a href="#">
                 <div className="relative rounded-lg">

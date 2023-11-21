@@ -2,7 +2,7 @@ import "@/public/Logo.png"
 
 export default function Footer() {
     return (
-      <div>
+   
              
   <footer class="bg-slate-950 dark:bg-gray-900 mt-64">
       <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
@@ -89,7 +89,7 @@ export default function Footer() {
       </div>
   </footer>
   
-      </div>
+   
     )
   }
   
