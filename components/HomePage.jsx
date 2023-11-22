@@ -1,19 +1,17 @@
 'use client'
-import Header from './Header'
-import SearchBar from './SearchBar'
-import "@/public/fondo2.jpg"
+
+import Header from './Header';
+import SearchBar from './SearchBar';
+import "@/public/casa3.jpg";
 
 export default function HomePage() {
-  const background = {
-        backgroundImage: "url('fondo2.jpg')",
-        backgroundSize: 'cover', // Ajusta el tamaño para cubrir completamente el contenedor
-        height: '100vh', // 100% de la altura de la ventana
-      }; 
-
   return (
-    <div className="bg-no-repeat " style={background}>
-      <Header />
-      <SearchBar />
+    <div className="relative w-screen h-screen bg-cover bg-center" style={{ backgroundImage: "url('casa3.jpg')" }}>
+      <div className="absolute inset-0 bg-gray-500 opacity-10  "></div>
+      <div className="relative z-10">
+        <Header />
+        <SearchBar />
+      </div>
     </div>
   );
 }

@@ -16,7 +16,11 @@ module.exports = {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px" 
+        'xs': '580px',         // Pequeñas pantallas, como teléfonos móviles
+        'md': '768px',         // Medianas pantallas, como tabletas
+        'lg': '1024px',        // Pantallas grandes, como laptops
+        'xl': '1280px',        // Pantallas extra grandes, como monitores de escritorio
+        '2xl': '1536px',       // Pantallas aún más grandes
       },
     },
     extend: {

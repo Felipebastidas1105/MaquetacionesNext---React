@@ -35,8 +35,8 @@ function LoginModal({ onClose }) {
 
   return (
 
-<div className="fixed top-0 left-0 w-full h-full flex items-center justify-center min-h-screen bg-black bg-opacity-[88%] z-50">
-  <div className="relative flex flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl h-[800px] md:flex-row md:space-y-0    ">
+<div className="fixed top-0 left-0 w-full h-full flex items-center justify-center min-h-screen bg-black bg-opacity-[88%] z-50 ">
+  <div className="relative flex flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl h-[800px] md:flex-row md:space-y-0 w-[80%] xl:mt-0 lg:mt-0 md:mt-0 sm:mt-0 xs:mt-40 ">
 
     <div className="absolute top-4 left-4">
       <button className="text-gray-800  px-4 py-2 rounded-lg" onClick={onClose}>
@@ -44,8 +44,8 @@ function LoginModal({ onClose }) {
       </button>
     </div>
 
-    <div onSubmit={handleSubmit} className="w-[600px] flex flex-col justify-center p-8 md:p-14 overflow-y-auto">
-      <span className={`text-4xl  font-bold ${isSignUp?'pt-56 ':'' }`}>{isSignUp ? 'Sign up' : 'Welcome back'}</span>
+    <div onSubmit={handleSubmit} className="w-full flex flex-col justify-center p-8 md:p-14 overflow-y-auto">
+      <span className={`text-4xl  font-bold ${isSignUp?'xl:pt-44 lg:pt-44 md:pt-44 sm:pt-44 xs:pt-[100%] ':'' }`}>{isSignUp ? 'Sign up' : 'Welcome back'}</span>
       <span className="font-light text-gray-400 mb-8">
         {isSignUp ? 'Create your account' : 'Welcome back! Please enter your details'}
       </span>
@@ -53,61 +53,61 @@ function LoginModal({ onClose }) {
       <form className='flex flex-col lg:w-full md:w-full lg:py-4'>
 
           {isSignUp && (
-              <div className="py-4">
+              <div className="py-4 flex flex-col">
                 <span className="mb-2 text-md">Confirm Password</span>
                 <input
                   type="password"
                   name="confirmPassword"
                   id="confirmPassword"
-                  className="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+                  className="w-full md:w-[70%] p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
                 />
               </div>
             )}
           {isSignUp && (
-              <div className="py-4">
+              <div className="py-4 flex flex-col">
                 <span className="mb-2 text-md">Confirm Password</span>
                 <input
                   type="password"
                   name="confirmPassword"
                   id="confirmPassword"
-                  className="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+                  className="w-full md:w-[70%] p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
                 />
               </div>
             )}
           {isSignUp && (
-              <div className="py-4">
+              <div className="py-4 flex flex-col">
                 <span className="mb-2 text-md">Confirm Password</span>
                 <input
                   type="password"
                   name="confirmPassword"
                   id="confirmPassword"
-                  className="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+                  className="w-full md:w-[70%] p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
                 />
               </div>
             )}
           {isSignUp && (
-              <div className="py-4">
+              <div className="py-4 flex flex-col">
                 <span className="mb-2 text-md">Confirm Password</span>
                 <input
                   type="password"
                   name="confirmPassword"
                   id="confirmPassword"
-                  className="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+                  className="w-full md:w-[70%] p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
                 />
               </div>
             )}
-            <div className="py-4">
+            <div className="py-4 flex flex-col">
               <span className="mb-2 text-md">Email</span>
               <input
                 type="text"
-                className="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+                className="w-full md:w-[70%] p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
                 name="email"
                 value={email}
                 onChange={handleEmailChange}
                 id="email"
               />
             </div>
-            <div className="py-4">
+            <div className="py-4 flex flex-col">
               <span className="mb-2 text-md">Password</span>
               <input
                 type="password"
@@ -116,11 +116,11 @@ function LoginModal({ onClose }) {
                 value={password}
                 onChange={handlePasswordChange}
                 onClick={() => setshowpassword(!showPassword)}
-                className="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+                className="w-full md:w-[70%] p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
               />
             </div>
             
-            <div className="flex justify-between w-full py-4">
+            <div className="flex justify-between w-[70%] py-4">
               <div className="mr-24">
                 <input type="checkbox" name="remember" id="remember" className="mr-2" />
                 <span className="text-md">Remember for 30 days</span>
@@ -130,23 +130,23 @@ function LoginModal({ onClose }) {
               </span>
             </div>
         <button
-          className="w-full bg-black text-white p-2 rounded-lg mb-6 hover:bg-white hover:text-black hover:border hover:border-gray-300"
+          className="w-full md:w-[70%] bg-black text-white p-2 rounded-lg mb-6 hover:bg-white hover:text-black hover:border hover:border-gray-300"
         >
           {isSignUp ? 'Registrarse' : 'Iniciar Sesión'}
         </button>
       </form>
 
       {/* Other buttons... */}
-      <div className="text-center text-gray-400">
+      <div className="text-center w-[70%] items-center text-gray-400">
         {isSignUp ? "Ya tienes una cuenta?" : "No tienes cuenta?"}
-        <button className="font-bold text-black" onClick={handleFormToggle}>
+        <button className="font-bold  text-black" onClick={handleFormToggle}>
           {isSignUp ? 'Iniciar Sesión' : ' Registrarse'}
         </button>
       </div>
     </div>
       <div className="relative   ">
         <img
-             src="room.gif"
+             src="casa.gif"
              alt="img"
              className=" h-full hidden rounded-r-2xl md:block object-cover"
           />
