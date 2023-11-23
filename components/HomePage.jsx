@@ -9,7 +9,7 @@ export default function HomePage() {
     <div className="relative w-screen h-screen bg-cover bg-center" style={{ backgroundImage: "url('casa3.jpg')" }}>
       <div className="absolute inset-0 bg-gray-500 opacity-10  "></div>
       <div className="relative z-10">
-        <Header />
+        <Header  text ="About "  text2 ="Contact"  text3 ="Information"/>
         <SearchBar />
       </div>
     </div>

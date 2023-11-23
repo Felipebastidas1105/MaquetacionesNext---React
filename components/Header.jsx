@@ -4,7 +4,7 @@ import { useState } from 'react';
 import LoginModal from './LoginModal';
 import "@/public/Logo.png"
 
-export default function Header() {
+export default function Header(props) {
 
   const [showModal, setShowModal] = useState(false);
 
@@ -16,7 +16,7 @@ export default function Header() {
     setShowModal(false);
   };
   return (
-    <nav class="  w-full z-20 top-0 start-0 ">
+    <nav class={`${props.bg ? props.bg : ""}  w-full z-20 top-0 start-0`}>
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
     <a href="" class="flex items-center space-x-3 rtl:space-x-reverse">
         <img src="Logo.png" class="h-40" alt="Logo Inmovilla"/>
@@ -36,13 +36,13 @@ export default function Header() {
           <a href="#" class="block py-2 px-3 text-black dark:text-white md:hover:text-[#F34511] rounded md:bg-transparent text-2xl md:p-0 " aria-current="page">Home</a>
         </li>
         <li>
-          <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#F34511] text-2xl md:p-0 md:dark:hover:text-[#F34511] dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+          <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#F34511] text-2xl md:p-0 md:dark:hover:text-[#F34511] dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">{props.text2 ? props.text2 : ""}</a>
         </li>
         <li>
-          <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#F34511] text-2xl md:p-0 md:dark:hover:text-[#F34511] dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
+          <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#F34511] text-2xl md:p-0 md:dark:hover:text-[#F34511] dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">{props.text3 ? props.text2 : ""}</a>
         </li>
         <li>
-          <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#F34511] text-2xl md:p-0 md:dark:hover:text-[#F34511] dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+          <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#F34511] text-2xl md:p-0 md:dark:hover:text-[#F34511] dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">{props.text ? props.text : ""}</a>
         </li>
       </ul>
     </div>
