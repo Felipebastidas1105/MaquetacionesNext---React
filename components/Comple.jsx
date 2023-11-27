@@ -11,6 +11,11 @@ import OSM from 'ol/source/OSM.js';
 import GalleryView from "./GalleryView";
 import Slider from 'react-slick';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { MdOutlineBedroomChild } from "react-icons/md";
+import { TbBathFilled } from "react-icons/tb";
+import { TbToolsKitchen2 } from "react-icons/tb";
+import { RxRulerHorizontal } from "react-icons/rx";
+import { AiFillHeart } from "react-icons/ai";
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -152,6 +157,8 @@ export default function Comple() {
         ))}
       </Slider>
     </div>
+
+ 
             {/* <!-- Preview Images Div For larger Screen--> */}
             {/* <div className="w-full sm:w-96 md:w-8/12 lg:w-6/12 flex lg:flex-row flex-col lg:gap-8 sm:gap-6 gap-4 mx-10">
                 <div className="w-full flex justify-center items-center">
@@ -172,6 +179,30 @@ export default function Comple() {
             {/* <GalleryView/> */}
         </div>
         {/*  */}
+
+    <div className="mt-4">
+      <h1> $ 2.000.000</h1>
+      <h1 className="font-semibold text-2xl">Casa de Campo</h1>
+      <div className="flex mt-4 space-x-11">
+                  <div className="text-gray-700 text-center">
+                    <MdOutlineBedroomChild size={32} color="#F34511" />
+                    {/* <span>{home.Cant_Cuartos}</span> */}
+                  </div>
+                  <div className="text-gray-700 text-center">
+                    <TbBathFilled size={32} color="#F34511" />
+                    {/* <span>{home.Cant_Baños}</span> */}
+                  </div>
+                  <div className="text-gray-700 text-center">
+                    <TbToolsKitchen2 size={32} color="#F34511" />
+                    <span>4</span>
+                  </div>
+                  <div className="text-gray-700 text-center">
+                    <RxRulerHorizontal size={32} color="#F34511" />
+                    {/* <span>{home.Area_Inmueble}</span> */}
+                  </div>
+                </div>
+    </div>
+
     <div className="flex flex-wrap items-center  border w-full mt-7 shadow-2xl rounded-lg ">
         <div className="linea-naranja  border-b-4 border-orange-500  text-xl mt-4 w-full pt-6 flex items-center px-2  rounded-lg shadow-lg">
           <h1 className="text-center text-[#F34511] justify-center items-center ">Descripción General</h1>

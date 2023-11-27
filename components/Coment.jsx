@@ -1,124 +1,109 @@
-'use client';
-import React from 'react';
-import Image from "next/image"
-import style from "@/style/Testimonial.module.css"
+"use client"
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Image from "next/image";
+import style from "@/style/Testimonial.module.css";
 
-
-const clients =
-[{
+const clients = [
+  {
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium porro excepturi ratione quos nostrum, reiciendis ea illo temporibus alias fuga tenetur architecto asperiores voluptas illum tempore, repellat, expedita nulla dignissimos.',
     author_image: 'author1.jpg',
     author: 'gemma nolen',
     ranking: '🟌',
     ranking_repeat: 5,
     company: 'Google',
-    inicio:'uiii'
-},
-{
+    inicio: 'uiii',
+  },
+  {
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium porro excepturi ratione quos nostrum, reiciendis ea illo temporibus alias fuga tenetur architecto asperiores voluptas illum tempore, repellat, expedita nulla dignissimos.',
     author_image: 'author2.jpg',
     author: 'gemma nolen',
     ranking: '🟌',
-    ranking_repeat: 2,
-    company:'Google'
-},
-{
+    ranking_repeat: 5,
+    company: 'Spotify',
+    inicio: 'uiii',
+  },
+  {
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium porro excepturi ratione quos nostrum, reiciendis ea illo temporibus alias fuga tenetur architecto asperiores voluptas illum tempore, repellat, expedita nulla dignissimos.',
     author_image: 'author3.jpg',
     author: 'gemma nolen',
     ranking: '🟌',
-    ranking_repeat: 1,
-    company:'Google'
-},
-{
+    ranking_repeat: 5,
+    company: 'Microsof',
+    inicio: 'uiii',
+  },
+  {
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium porro excepturi ratione quos nostrum, reiciendis ea illo temporibus alias fuga tenetur architecto asperiores voluptas illum tempore, repellat, expedita nulla dignissimos.',
     author_image: 'author4.jpg',
     author: 'gemma nolen',
     ranking: '🟌',
-    ranking_repeat: 2,
-    company:'Google'
-},
-{
+    ranking_repeat: 5,
+    company: 'Google',
+    inicio: 'uiii',
+  },
+  {
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium porro excepturi ratione quos nostrum, reiciendis ea illo temporibus alias fuga tenetur architecto asperiores voluptas illum tempore, repellat, expedita nulla dignissimos.',
     author_image: 'author5.jpg',
     author: 'gemma nolen',
     ranking: '🟌',
-    ranking_repeat: 1,
-    company:'Google'
-},
-{
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium porro excepturi ratione quos nostrum, reiciendis ea illo temporibus alias fuga tenetur architecto asperiores voluptas illum tempore, repellat, expedita nulla dignissimos.',
-    author_image: 'author6.jpg',
-    author: 'gemma nolen',
-    ranking: '🟌',
-    ranking_repeat: 2,
-    company:'Google'
-},
-{
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium porro excepturi ratione quos nostrum, reiciendis ea illo temporibus alias fuga tenetur architecto asperiores voluptas illum tempore, repellat, expedita nulla dignissimos.',
-    author_image: 'author7.jpg',
-    author: 'gemma nolen',
-    ranking: '🟌',
-    ranking_repeat: 1,
-    company:'Google'
-},
-]
+    ranking_repeat: 5,
+    company: 'Google',
+    inicio: 'uiii',
+  },
+  // ... Agrega los demás clientes aquí ...
+];
 
 const settings = {
   dots: true,
-  autoplay: true, 
+  autoplay: true,
   infinite: true,
   autoplaySpeed: 2000,
-  slidesToShow: 3, // Ajusta el número de comentarios visibles
+  slidesToShow: 3,
   slidesToScroll: 1,
-  responsive:[
+  responsive: [
     {
-      breakpoint:500,
-      settings:
-      {
+      breakpoint: 500,
+      settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
-      }
-    }
-  ]
+      },
+    },
+  ],
 };
-
-
 
 const Coment = () => {
   return (
-    <>
- 
-    <div className='bg-gray-100 h-[650px] z-50 lg:px-20 md:px-6'>
-      <h2 className={style.testimonial_title} >Comentarios</h2>
-      <div className='w-full overflow-hidden '>
-
-        <Slider {...settings}>
+    <div className="container my-24 mx-auto md:px-6">
+      <section className="mb-32 text-center">
+        <h2 className="mb-12 text-3xl font-bold">Testimonials</h2>
+        <Slider {...settings} >
           {clients.map((client, index) => (
-            <div key={index} className={style.testimonial}>
-              <h3>{client.text}</h3>
-              <div className={style.author}>
-                <Image src={`/assets/img/${client.author_image}`} alt="author_img" width='50' height='40' />
-                <p>
-                  {client.ranking.repeat(client.ranking_repeat)}
-                  {client.author}<br />
-                  {client.company}
-                </p>
-              </div>
-            </div>
+           <div key={index} className="mb-12 md:mb-0 shadow-lg  card-container">
+           <div className="mb-6 flex justify-center">
+             <Image src={`/assets/img/${client.author_image}`} alt="author_img" width={100} height={100} className="w-32 h-32 rounded-full shadow-lg dark:shadow-black/20" />
+           </div>
+           <h5 className="mb-2 text-lg font-bold">{client.author}</h5>
+           <h6 className="mb-4 font-medium text-primary dark:text-primary-400">{client.company}</h6>
+           <p className="mb-4 px-6"> {client.text} </p>
+           <ul className="mb-0 flex justify-center">
+             {Array(client.ranking_repeat).fill(
+               <li key={index}>
+                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 96 960 960" className="w-5 text-warning">
+                   <path fill="currentColor" d="m233 976 65-281L80 506l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
+                 </svg>
+               </li>
+             )}
+           </ul>
+         </div>
+         
+          
+          
           ))}
         </Slider>
-      </div>
-      </div>
-    </>
+      </section>
+    </div>
   );
 };
 
 export default Coment;
-
-
-
-
