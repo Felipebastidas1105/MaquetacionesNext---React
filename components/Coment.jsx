@@ -76,7 +76,7 @@ const Coment = () => {
   return (
     <div className="container my-24 mx-auto md:px-6">
       <section className="mb-32 text-center">
-        <h2 className="mb-12 text-3xl font-bold">Testimonials</h2>
+        <h2 className="mb-12 text-3xl font-bold bg-red-500">Testimonials</h2>
         <Slider {...settings} >
           {clients.map((client, index) => (
            <div key={index} className="mb-12 md:mb-0 shadow-lg  card-container">
